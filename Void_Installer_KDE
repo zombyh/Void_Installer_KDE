@@ -1,1 +1,65 @@
-#! /bin/bash
+#!/bin/bash
+
+while true; do
+    # Menu principal
+    echo "Escolha uma opção:"
+    echo "1 - Instalar ambiente Plasma / KDE (Obrigatório)"
+    echo "2 - Instalar driver Nvidia (Opcional)"
+    echo "3 - Configurar inicialização de serviços (Obrigatório)"
+    echo "4 - Alterar terminal padrão para bash (Recomendado)"
+    echo "5 - Configurar grub para reconhecer dualboot Linux/Windows"
+    echo "6 - Sair"
+    read -p "Opção: " choice
+
+    case $choice in
+        1)  #Instalar ambiente Plasma / KDE (Obrigatório)
+            xbps-install -Suy
+            xbps-install -u xbps
+            xbps-install -Suy
+            xbps-install -y void-repo-nonfree void-repo-multilib void-repo-multilib-nonfree
+            xbps-install -Suy
+            xbps-install -y nano plasma-desktop xorg base-devel kde5 kde5-baseapps firefox wireplumber pulseaudio colord preload gimp vlc papirus-icon-theme unrar p7zip ntfs-3g ark kcalc ntp libreoffice aspell-pt_BR firefox-i18n-pt-BR hunspell-pt_BR libreoffice-i18n-pt-BR manpages-pt-br git xtools okular wget spectacle screenFetch openjdk curl xz unzip gptfdisk mtools mlocate fuse-exfat bash-completion linux-headers ffmpeg htop autoconf automake bison m4 make libtool flex meson ninja optipng sassc pulseaudio-utils pulsemixer cronie partitionmanager
+            ;;
+        2)  #Instalar driver Nvidia (Opcional)
+            xbps-install -Suy
+            xbps-install -u xbps
+            xbps-install -Suy
+            xbps-install -y void-repo-nonfree void-repo-multilib void-repo-multilib-nonfree
+            xbps-install -Suy
+            xbps-install -y nvidia
+            ln -s /etc/sv/nvidia-powerd /var/service
+            ;;
+        3)  #Configurar inicialização de serviços (Obrigatório)
+            ln -s /etc/sv/NetworkManager /var/service
+            ln -s /etc/sv/boltd /var/service
+            ln -s /etc/sv/colord /var/service
+            ln -s /etc/sv/crond /var/service
+            ln -s /etc/sv/cronie /var/service
+            ln -s /etc/sv/dbus /var/service
+            ln -s /etc/sv/dmeventd /var/service
+            ln -s /etc/sv/elogind /var/service
+            ln -s /etc/sv/ntpd /var/service
+            ln -s /etc/sv/polkitd /var/service
+            ln -s /etc/sv/preload /var/service
+            ln -s /etc/sv/rtkit /var/service
+            ln -s /etc/sv/sddm /var/service
+            ln -s /etc/sv/udevd /var/service
+            ln -s /etc/sv/uuidd /var/service
+            ln -s /etc/sv/wireplumber /var/service
+            ;;
+        4)  #Alterar terminal padrão para bash (Recomendado)
+            chsh -s /bin/bash
+            ;;
+        5)  #Configurar grub para reconhecer dualboot Linux/Windows
+            echo "GRUB_DISABLE_OS_PROBER=false" >> /etc/default/grub
+            os-prober
+            update-grub
+            ;;
+        6)  # Sai do script
+            break
+            ;;
+        *)
+            echo "Opção inválida."
+            ;;
+    esac
+done
