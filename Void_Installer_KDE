@@ -49,6 +49,7 @@ while true; do
             ;;
         4)  #Alterar terminal padrão para bash (Recomendado)
             chsh -s /bin/bash
+            su
             ;;
         5)  #Configurar grub para reconhecer dualboot Linux/Windows
             echo "GRUB_DISABLE_OS_PROBER=false" >> /etc/default/grub
