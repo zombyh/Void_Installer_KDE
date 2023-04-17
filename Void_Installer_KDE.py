@@ -7,7 +7,7 @@ while True:
     print("2 - Instalar driver Nvidia (Opcional)")
     print("3 - Configurar inicialização de serviços (Obrigatório)")
     print("4 - Alterar terminal padrão para bash (Recomendado)")
-    print("5 - Configurar grub para reconhecer dualboot Linux/Windows")
+    print("5 - Configurar grub para reconhecer dualboot Linux/Windows (Opcional)")
     print("6 - Sair")
     choice = input("Opção: ")
 
