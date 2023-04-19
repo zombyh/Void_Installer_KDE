@@ -17,7 +17,7 @@ while True:
         os.system("xbps-install -Suy")
         os.system("xbps-install -y void-repo-nonfree void-repo-multilib void-repo-multilib-nonfree")
         os.system("xbps-install -Suy")
-        os.system("xbps-install -y nano plasma-desktop xorg base-devel kde5 kde5-baseapps firefox wireplumber pulseaudio colord preload gimp vlc papirus-icon-theme unrar p7zip ntfs-3g ark kcalc ntp libreoffice aspell-pt_BR firefox-i18n-pt-BR hunspell-pt_BR libreoffice-i18n-pt-BR manpages-pt-br git xtools okular wget spectacle screenFetch openjdk curl xz unzip gptfdisk mtools mlocate fuse-exfat bash-completion linux-headers ffmpeg htop autoconf automake bison m4 make libtool flex meson ninja optipng sassc pulseaudio-utils pulsemixer cronie partitionmanager")
+        os.system("xbps-install -y nano plasma-desktop xorg openntpd base-devel kde5 kde5-baseapps firefox wireplumber pulseaudio colord preload gimp vlc papirus-icon-theme unrar p7zip ntfs-3g ark kcalc ntp libreoffice aspell-pt_BR firefox-i18n-pt-BR hunspell-pt_BR libreoffice-i18n-pt-BR manpages-pt-br git xtools okular wget spectacle screenFetch openjdk curl xz unzip gptfdisk mtools mlocate fuse-exfat bash-completion linux-headers ffmpeg htop autoconf automake bison m4 make libtool flex meson ninja optipng sassc pulseaudio-utils pulsemixer cronie partitionmanager")
     elif choice == '2':  # Instalar driver Nvidia (Opcional)
         os.system("xbps-install -Suy")
         os.system("xbps-install -u xbps")
