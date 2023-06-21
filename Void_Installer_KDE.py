@@ -7,7 +7,8 @@ while True:
     print("2 - Instalar driver Nvidia (Opcional)")
     print("3 - Configurar inicialização de serviços (Obrigatório)")
     print("4 - Configurar grub para reconhecer dualboot Linux/Windows (Opcional)")
-    print("5 - Sair")
+    print("5 - Instalar ferramentas de segurança e pentest(Opcional)")
+    print("0 - Sair")
     choice = input("Opção: ")
     if choice == '1':  # Instalar ambiente Plasma/KDE
         os.system("xbps-install -Suy")
@@ -15,7 +16,7 @@ while True:
         os.system("xbps-install -Suy")
         os.system("xbps-install -y void-repo-nonfree void-repo-multilib void-repo-multilib-nonfree")
         os.system("xbps-install -Suy")
-        os.system("xbps-install -yf nano inetutils-ifconfig pipewire pulseaudio cmake git cppcheck indent colord-kde flatpak-kcm gwenview kdegraphics-thumbnailers kdewebkit krename ksolid kwrite void-updates vpnd plasma-desktop xorg base-devel kde5 kde5-baseapps firefox wireplumber  colord preload gimp vlc papirus-icon-theme unrar p7zip ntfs-3g ark kcalc ntp libreoffice aspell-pt_BR firefox-i18n-pt-BR hunspell-pt_BR libreoffice-i18n-pt-BR manpages-pt-br git xtools okular wget spectacle screenFetch openjdk curl xz unzip gptfdisk mtools mlocate fuse-exfat bash-completion linux-headers ffmpeg htop autoconf automake bison curl m4 make libtool flex meson ninja optipng sassc cronie partitionmanager")
+        os.system("xbps-install -yf nano ruby inetutils-ifconfig pipewire pulseaudio cmake git cppcheck indent colord-kde flatpak-kcm gwenview kdegraphics-thumbnailers kdewebkit krename ksolid kwrite void-updates vpnd plasma-desktop xorg base-devel kde5 kde5-baseapps firefox wireplumber  colord preload gimp vlc papirus-icon-theme unrar p7zip ntfs-3g ark kcalc ntp libreoffice aspell-pt_BR firefox-i18n-pt-BR hunspell-pt_BR libreoffice-i18n-pt-BR manpages-pt-br git xtools okular wget spectacle screenFetch openjdk curl xz unzip gptfdisk mtools mlocate fuse-exfat bash-completion linux-headers ffmpeg htop autoconf automake bison curl m4 make libtool flex meson ninja optipng sassc cronie partitionmanager")
         os.system("ln -s /etc/sv/sddm /var/service")
     elif choice == '2':  # Instalar driver Nvidia (Opcional)
         os.system("xbps-install -Suy")
@@ -48,6 +49,11 @@ while True:
         os.system("os-prober")
         os.system("update-grub")
     elif choice == "5":
+        # Instalar ferramentas de segurança e pentest(Opcional)
+        usuario = input("Digite seu nome de usuário: ")
+        os.system("xbps-install -fy wireshark aircrack-ng netcat tcpdump john kismet ettercap scapy whois thc-hydra tor proxychains sqlmap lynis zenmap nmap hashcat hashcat-utils bettercap")
+        os.system(f"usermod -aG kismet {usuario}")
+    elif choice == "0":
         # Sai do script
         break
     else:
