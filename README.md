@@ -1,15 +1,13 @@
-<h1>
+<h3>
 Void_Installer_KDE
-</h1>
-<h2>
+</h3>
+<h4>
 Gerenciador criado por Marcelo Rocha | m.rocha@outlook.com.br
-</h2>
-
+</h4>
 
 Este é um utilitário para auxiliar na instalação do ambiente Plasma / KDE completo, com (ou sem) driver Nvidia, configurar os serviços essenciais, e instalar vários utilitários para pentest e segurança no Void Linux (Opcional)!
 Obs.: Para utilizar o programa é necessário realizar a instalação básica do Void Linux primeiro.<br>
 Para instalar o sistema siga o link:<a href="https://docs.voidlinux.org/installation/live-images/guide.html"> Instalação Void </a>
-
 
 Após instalar o Void e iniciar o sistema pela primeira vez, siga os comandos para instalar o ambiente:
 <h6>
