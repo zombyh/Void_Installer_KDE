@@ -12,17 +12,17 @@ Para instalar o sistema siga o link:<a href="https://docs.voidlinux.org/installa
 
 
 Após instalar o Void e iniciar o sistema pela primeira vez, siga os comandos para instalar o ambiente:
-<h5>
+<h6>
 $ sudo xbps-install -Syu ; sudo xbps-install -y python3 git<br>
 $ cd /home/$USER/ ; git clone https://github.com/zombyh/Void_Installer_KDE.git ; cd Void_Installer_KDE<br>
 $ sudo python3 Void_Installer_KDE.py
-</h5>
+</h6>
 
 
 <h4>
 Funcionamento do utilitário:
 </h4>
-<h5>
+<h6>
 Escolha uma opção:<br>
 1 - Instalar ambiente Plasma/KDE ⇾ Essa opção instala o ambiente completo do Plasma/KDE, e seu utilitários.<br>
 2 - Instalar driver Nvidia (Opcional) ⇾ Essa opção instala o driver Nvidia mais atual, e inicia o serviço 'nvidia-powerd'.<br>
@@ -30,5 +30,5 @@ Escolha uma opção:<br>
 4 - Configurar grub para reconhecer dualboot Linux/Windows (Opcional) ⇾ Essa opção configura o grub caso você tenha dualboot<br>
 5 - Instalar ferramentas de segurança e pentest (Opcional) ⇾ Essa opção instala diversas ferramentas como Wireshark, nmap, etc.<br>
 0 - Sair ⇾ Essa opção fecha o utilitário.
-</h5>
+</h6>
 
