@@ -16,7 +16,7 @@ def configure_plasma():
     create_service_link("sddm")
 
 def install_nvidia_driver():
-    packages = "void-repo-nonfree void-repo-multilib void-repo-multilib-nonfree nvidia"
+    packages = "void-repo-nonfree void-repo-multilib void-repo-multilib-nonfree nvidia Vulkan-Headers nvidia-opencl nvidia-firmware nvtop"
     install_packages(packages)
     create_service_link("nvidia-powerd")
 
